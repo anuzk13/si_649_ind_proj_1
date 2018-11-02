@@ -1,0 +1,68 @@
+.plots-container {
+    display: flex;
+}
+
+.description {
+  width: 15%;
+  font-size: 0.7em !important;
+  padding: 0em 1em;
+  margin-right: 1em;
+  background: #f7efef;
+  height: 350px;
+  margin-top: 1em;
+}
+
+.plot {
+    width: 50%;
+}
+
+.curr-val {
+    display: flex;
+}
+
+.curr-val p {
+    padding: 1em;
+}
+
+input {
+  height: 24px;
+  margin-top: 6px;
+  margin-left: 5px;
+}
+
+label {
+  padding-left: 0.5em; 
+}
+
+svg {
+  font: 10px sans-serif;
+}
+
+.background path {
+  fill: none;
+  stroke: #ddd;
+  shape-rendering: crispEdges;
+}
+
+.foreground path {
+  fill: none;
+  stroke: steelblue;
+}
+
+.brush .extent {
+  fill-opacity: .3;
+  stroke: #fff;
+  shape-rendering: crispEdges;
+}
+
+.axis line,
+.axis path {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.axis text {
+  text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
+  cursor: move;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+  <head>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/flat-ui.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="col">
+          <div class="row">
+            <label for="func"> Polynomial function </label>
+            <input type="text" id="func" value='x ^ 2 + 3 * x + x^ 4'>
+            <label for="guess"> Initial guess </label>
+            <input type="number" id="guess" value='2'>
+            <label for="alpha"> Gradient alpha </label>
+            <input type="number" id="alpha" value='0.001'>
+          </div>
+          <div class="row">
+            <div class="col-md-2">
+              <button class="btn btn-block btn-sm btn-danger" id="do_t"> Start </button>
+            </div>
+            <div class="col-md-2">
+              <button class="btn btn-block btn-sm btn-danger" id="step" disabled> Step </button>
+            </div>
+            <div class="col-md-2">
+              <button class="btn btn-block btn-sm btn-danger" id="animate"> Animate </button>
+            </div>
+            <div class="col-md-2">
+              <button class="btn btn-block btn-sm btn-danger" id="add_plot" disabled> Add to plot </button>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="plots-container">
+      <div class="description">
+          Insert a Polynomial function an initial guess for the minimum (where the optimization will start) and an alpha value for delta.
+          Use <b>start</b> to initialize or reset the animation, and <b>play</b> or <b>step</b> to animate.
+          <br>
+          When an optimization is complete you can use <b>add to plot</b> to compare the step count between the two methods and different parameters
+          <br>
+          The step count can vary from <b style="color:#00f1ff">0</b> and <b style="color:#ff0000">20</b>
+      </div>
+        <div class="plot">
+            <h6>Newthon's method for finding local minimum:</h5>
+            <div class="curr-val">
+              <p><b>Current minimum found:</b></p><p id="current_val_newton"></p>
+            </div>
+            <div id="newton">
+
+            </div>
+        </div>
+        <div class="plot">
+            <h6>Gardient descent for finding local minimum:</h5>
+            <div class="curr-val">
+              <p><b>Current minimum found:</b></p><p id="current_val_gradient"></p>
+            </div>
+            <div id="gradient">
+
+            </div>
+        </div>
+    </div>
+    <div id="coordinates">
+
+    </div>
+  
+    <!--JavaScript at end of body for optimized loading-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <script src="bundle.js"></script>
+  </body>
+</html>
