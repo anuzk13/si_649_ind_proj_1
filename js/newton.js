@@ -9,6 +9,7 @@ var current_zero;
 var x_margin;
 var y_margin;
 var points;
+var finished;
 
 function newton_step (func, deriv_func, guess_point) {
   var tangent_exp = deriv_func.split('x').join(`(${guess_point})`);
@@ -62,7 +63,7 @@ function plot_newton_step (func, deriv_func, guess_point, intercept, new_point, 
 
 function do_step() {
   if (Math.abs(current_zero) < 0.001) {
-    console.log('zero found')
+    finished = true;
   } else {
     var newton_data = newton_step(current_func, current_deriv, points[points.length-1]);
     points.push(newton_data.intercept);
@@ -78,6 +79,7 @@ exports.init = (f_string, guess) => {
   current_func = f_string;
   current_zero = Number.MAX_VALUE;
   points = [guess];
+  finished = false;
   current_deriv = math_lib.derivative(current_func,'x').toString();
   var y_eval = math_lib.eval(current_func.split('x').join(`(${points[0]})`));
   y_margin = Math.max(1, Math.abs(y_eval) + Math.abs(y_eval) * .1);
@@ -86,4 +88,8 @@ exports.init = (f_string, guess) => {
 }
 exports.step = () => {
   do_step();
+}
+
+exports.finished = () => {
+  return finished;
 }

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+  <head>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/flat-ui.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+
+  <body>
+    <div class="container" style="margin: 0 !important;">
+      <div class="col">
+          <div class="row">
+            <label for="func"> Polynomial function </label>
+            <input type="text" id="func" value='x ^ 2 + 3 * x + x^ 4'>
+            <label for="guess"> Initial guess </label>
+            <input type="number" id="guess" value='2'>
+          </div>
+          <div class="row">
+            <div class="col-md-2">
+              <button class="btn btn-block btn-sm btn-danger" id="do_t"> Start </button>
+            </div>
+            <div class="col-md-2">
+              <button class="btn btn-block btn-sm btn-danger" id="step" disabled> Step </button>
+            </div>
+            <div class="col-md-2">
+              <button class="btn btn-block btn-sm btn-danger" id="animate"> Animate </button>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="plots-container" style="margin-left: 2em;">
+        <div class="plot">
+            <h6>Newthon's method for finding roots in a function:</h5>
+            <div class="curr-val">
+              <p><b>Current zero found:</b></p><p id="current_val_newton"></p>
+            </div>
+            <div id="newton">
+
+            </div>
+        </div>
+    </div>
+    <!--JavaScript at end of body for optimized loading-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <script src="bundle_2.js"></script>
+  </body>
+</html>
